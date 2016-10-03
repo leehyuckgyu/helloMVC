@@ -9,7 +9,7 @@
 <body>
 	This is a error page.
 	<p>
-		<a href="/helloMVC/index.jsp"> try agian</a>
+		<a href="/helloMVC/index.jsp"> try again</a>
 	</p>
 </body>
 </html>

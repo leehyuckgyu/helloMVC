@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Login Page</title>
+<title>Insert title here</title>
 </head>
-
-<style>
-div.ex {
+<body>
+	<style>
+div.ex2 {
 	text-align: center;
 	width: 40%;
 	padding: 10px;
@@ -16,12 +16,14 @@ div.ex {
 	margin: 20px
 }
 </style>
-
 <body>
-	<h1>Login Form</h1>
-	<div class="ex">
-		<form action="/helloMVC/doLogin" method="post">
+	<h1>Register Form</h1>
+	<div class="ex2">
+		<form action="/helloMVC/DoRegister" method="post">
 			<table cellpadding="5">
+				<tr>
+					<h3>Enter Information Here</h3>
+				</tr>
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" name="id" /></td>
@@ -31,8 +33,23 @@ div.ex {
 					<td><input type="password" name="password" /></td>
 				</tr>
 				<tr>
+					<td>이름</td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td>성별</td>
+					<td>
+					<input type="radio" name="gender" value="male" />male
+					<input type="radio" name="gender" value="female" />female
+					</td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" name="email" /></td>
+				</tr>
+				<tr>
 					<td></td>
-					<td><input type="submit" value="login" /></td>
+					<td><input type="submit" value="Register" /></td>
 				</tr>
 			</table>
 		</form>

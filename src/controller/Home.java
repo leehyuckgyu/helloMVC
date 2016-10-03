@@ -20,8 +20,6 @@ public class Home extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public Home() {
-        super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -35,8 +33,8 @@ public class Home extends HttpServlet {
 		if (action.equals("login"))
 			page = "/view/loginform.jsp";
 		
-		else if (action.equals("help"))
-			page="/view/help.jsp";
+		else if (action.equals("register"))
+			page="/view/registerform.jsp";
 		
 		else
 			page="/view/error.jsp";

@@ -32,6 +32,7 @@ public class DoLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    /*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String customerId = request.getParameter("customerId");
 		// DB를 조회해서 저장된 레코드를 조회
@@ -58,6 +59,32 @@ public class DoLogin extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page); //해당하는 page로 포워딩 시키는
 		dispatcher.forward(request, response);
+		
+	}
+	*/
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		
+		CustomerService service = (CustomerService) CustomerService.getInstance();
+		Customer customer = service.login(id, password);
+		
+		String page;
+		
+		if(customer == null) {
+			page ="/view/loginFail.jsp";
+			request.setAttribute("id", id);
+		}
+		else {
+			page ="view/loginSuccess.jsp";
+			request.setAttribute("customer", customer);
+		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher(page); //해당하는 page로 포워딩 시키는
+		dispatcher.forward(request, response);
+		
+		
 		
 	}
 
